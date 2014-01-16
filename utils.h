@@ -9,7 +9,7 @@
 using std::ifstream;
 using std::string;
 using std::vector;
-#include "common.h"
+#include "def.h"
 
 namespace ucltp {
 
