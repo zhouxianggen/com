@@ -66,5 +66,23 @@ int split (const string& str, vector<string>& parts)
   return parts.size();
 }
 
+string pos2name(uint64 pos)
+{
+  string name;
+  uint64 pos2 = pos >> 1;
+  if (pos & POS_m) name += "M";
+  if (pos2 & POS_m) name += "m";
+  return name;
+}
+
+// show vector<char_t>
+void show(const vector<char_t>& chars)
+{
+  for (int i=0; i<chars.size(); i+=1)
+    //printf(" %s/%x ", chars[i]._name.c_str(), chars[i]._tag);
+    printf(" %s/%s ", chars[i]._name.c_str(), pos2name(chars[i]._tag).c_str());
+  printf("\n");
+}
+
 } // namespace
 

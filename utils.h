@@ -25,5 +25,8 @@ bool read_lines(const char* file, vector<string>& lines);
 // split string by space
 int split(const string& str, vector<string>& parts);
 
+// show vector<char_t>
+void show(const vector<char_t>& chars);
+
 }
 #endif 

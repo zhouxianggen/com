@@ -61,13 +61,13 @@ struct char_t {
   uint32 _code;
   uint64 _tag;
   
-  void set_tag(uint64 pos, int offset) {
+  void set_tag(uint64 pos, int offset=0) {
     _tag |= (pos << offset);
   }
   
-  char_t(const char *s, int len, uint32 c) : _code(c), _name(s, len) {}
-  char_t(char ch, uint32 c) : _code(c), _name(1, ch) {}
-  char_t() : _code(0) { _name[0] = '\0'; }
+  char_t(const char *s, int len, uint32 c) : _code(c), _name(s, len), _tag(0) {}
+  char_t(char ch, uint32 c) : _code(c), _name(1, ch), _tag(0) {}
+  char_t() : _code(0), _tag(0) {}
 };
 
 struct word_t {
